@@ -1,3 +1,5 @@
+from Casilla import Casilla
+
 class CasillaSegura(Casilla):
     """""""""
     Es una de las herencias de casilla, esta clase representa cuando una casilla es "Segura" de comer,
