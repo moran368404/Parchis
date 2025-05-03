@@ -2,7 +2,7 @@ from typing import List
 from Jugador import Jugador
 from Ficha import Ficha
 from tablero import Tablero
-from dado import Dado
+from Dado import Dado
 
 class Juego:
     def __init__(self, jugadores: List[Jugador], tablero: Tablero, dado: Dado):
