@@ -1,6 +1,6 @@
 from typing import List
-from casilla import Casilla
-from casilla_salida import CasillaSalida
+from Casilla import Casilla
+from CasillaSalida import CasillaSalida
 from ficha import Ficha
 
 class Tablero:

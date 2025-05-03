@@ -1,6 +1,6 @@
 from typing import List
-from jugador import Jugador
-from ficha import Ficha
+from Jugador import Jugador
+from Ficha import Ficha
 from tablero import Tablero
 from dado import Dado
 
