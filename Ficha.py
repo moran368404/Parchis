@@ -1,3 +1,5 @@
+from CasillaMeta import CasillaMeta
+
 class Ficha:
     """
     Representa una ficha individual de un jugador. 

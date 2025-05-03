@@ -1,3 +1,7 @@
+from Ficha import Ficha
+from Casilla import Casilla
+from CasillaMeta import CasillaMeta
+
 class Jugador:
     """
     Clase que representa a uno de los jugadores del juego de Parchís.
@@ -8,7 +12,7 @@ class Jugador:
     def __init__(self, nombre: str, color: str):
         self.nombre = nombre
         self.color = color                # Color de las fichas del jugador
-        self.fichas = []                  # Lista de fichas del jugador (List[Ficha])
+        self.fichas = [Ficha(i, 0, Casilla(0)) for i in range(4)]                  # Lista de fichas del jugador (List[Ficha])
 
     def fichas_en_meta(self) -> bool:
         """

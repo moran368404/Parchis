@@ -1,25 +1,33 @@
+from Juego import Juego
+from VistaJuego import VistaJuego
 from Jugador import Jugador
-from Tablero import Tablero
-from Dado import Dado
 
 class JuegoPresenter:
-    def __init__(self, jugadores : list[Jugador], tablero: Tablero, dado: Dado):
-        self.jugadores = jugadores
-        self.tablero = tablero
-        self.dado = dado
-        self.turnoActual = 0
+    def __init__(self, vista: VistaJuego, juego: Juego):
+        self.vista = vista
+        self.juego = juego
 
-    def iniciarJuego(self):
-        print("Comenzando el juego")
+    def iniciar(self):
+        self.juego.iniciar_juego()
+        self.vista.mostrar_mensaje("Juego iniciado!")
 
-    def lanzar_Dado(self):
-        print("Lanzando dado...")
+    def lanzar_dado(self):
+        resultado = self.juego.lanzar_dado()
+        self.vista.mostrar_dado(resultado)
+        return resultado
 
-    def mover_ficha(self):
-        print("Moviendo ficha...")
-
-    def verificar_Ganador(self):
-        print("Verificando ganador...")
-
-    def siguiente_turno(self):
-        print("Que?")
+    def mover_ficha(self, jugador: Jugador, ficha_id: int, pasos: int):
+        ficha = jugador.fichas[ficha_id]
+        if ficha.puede_moverse(pasos):
+            self.juego.mover_ficha(jugador, ficha, pasos)
+            self.vista.mostrar_mensaje(f"{jugador.nombre} mueve ficha {ficha_id} a {ficha.posicion}")
+            self.vista.mostrar_tablero(self.juego.tablero)
+            ganador = self.juego.verificar_ganador()
+            if ganador:
+                self.vista.mostrar_mensaje(f"{ganador.nombre} ha ganado!")
+                return True
+            else:
+                self.juego.siguiente_turno()
+        else:
+            self.vista.mostrar_mensaje("Movimiento inválido")
+        return False

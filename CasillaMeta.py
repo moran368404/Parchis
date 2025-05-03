@@ -7,10 +7,9 @@ class CasillaMeta(Casilla):
     a la que ningún otro jugador puede acudir, cuando tenga 4 fichas dentro de la casilla meta
     significa que ha sido el ganador.
     """""""""
-    def __init__(self, posicion: int, jugador: Jugador):
+    def __init__(self, posicion: int):
         super().__init__(posicion)
         self.llegadas: List['Ficha'] = []
-        self.jugador = jugador
 
     def registrar_llegada(self, ficha: 'Ficha'):
         self.llegadas.append(ficha)

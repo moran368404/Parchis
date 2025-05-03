@@ -1,3 +1,7 @@
+from VistaJuego import VistaJuego
+from Juego import Juego
+from JuegoPresenter import JuegoPresenter
+
 def ciclo_de_juego():
     vista = VistaJuego()
     juego = Juego()
