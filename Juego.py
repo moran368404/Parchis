@@ -1,7 +1,7 @@
 from typing import List
 from Jugador import Jugador
 from Ficha import Ficha
-from tablero import Tablero
+from Tablero import Tablero
 from Dado import Dado
 
 class Juego:
