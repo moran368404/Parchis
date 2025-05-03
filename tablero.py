@@ -1,7 +1,7 @@
 from typing import List
 from Casilla import Casilla
 from CasillaSalida import CasillaSalida
-from ficha import Ficha
+from Ficha import Ficha
 
 class Tablero:
     def __init__(self):
