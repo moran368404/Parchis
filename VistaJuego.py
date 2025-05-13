@@ -27,6 +27,7 @@ class VistaJuego(QMainWindow):
 
     def cerrar(self):
         self.close()
+        exit()
 
     def mostrar_tablero(self, tablero: Tablero):
         print("\nTablero:")
