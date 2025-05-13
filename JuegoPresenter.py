@@ -3,9 +3,18 @@ from VistaJuego import VistaJuego
 from Jugador import Jugador
 
 class JuegoPresenter:
+
     def __init__(self, vista: VistaJuego, juego: Juego):
         self.vista = vista
         self.juego = juego
+
+    def mostrar_instrucciones(self):
+        instructions = "Las reglas del Parchís..."
+        self.vista.mostrar_mensaje(instructions)
+
+    def configurar_jugadores(self, cantidad):
+        self.juego.configurar_jugadores(cantidad)
+        self.iniciar()
 
     def iniciar(self):
         self.juego.iniciar_juego()

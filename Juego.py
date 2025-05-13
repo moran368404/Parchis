@@ -11,12 +11,15 @@ class Juego:
         self.tablero = Tablero()
         self.dado = Dado(6)
         self.turno_actual = 0
+        self.num_jugadores = 0
         ##self.jugador_actual = self.jugadores[self.turno_actual]
+
+    def configurar_jugadores(self, cantidad):
+        self.num_jugadores = cantidad
 
     def iniciar_juego(self):
         colores_disponibles = ["rojo", "verde", "amarillo", "azul"]
-        num_jugadores = int(input("Ingrese el numero de jugadores: "))
-        for i in range(num_jugadores):  # O cambia a 4 si vas a permitir 4 jugadores
+        for i in range(self.num_jugadores):  # O cambia a 4 si vas a permitir 4 jugadores
             nombre = input(f"Ingrese el nombre del jugador {i + 1}: ")
 
             while True:
